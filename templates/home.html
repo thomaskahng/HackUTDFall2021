@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Stock Finder</title>
+
+    <style type="text/css" scoped>
+      .center {
+        text-align: center;
+        padding-top: 10px 0;
+      }
+      body {
+        background: linear-gradient(-45deg, blue, gold, darkmagenta);
+        background-size: 400% 400%;
+        animation: gradient 20s ease infinite;
+        height: 100vh;
+      }
+
+      @keyframes gradient {
+        100% {
+            background-position: 100% 100%;
+        }
+        100% {
+            background-position: 100% 100%;
+        }
+        100% {
+            background-position: 100% 100%;
+        }
+      }
+
+      form {
+        font-size: large;
+      }
+      input{
+        width: 300px;
+        height: 80px;
+        font-size: xx-large;
+        margin: auto;
+        position: relative;
+        text-align: center;
+      }
+        h1 {
+           padding-top: 10px;
+           text-align: center;
+           font-size: 70px;
+           color: darkslategrey;
+           font-family: Georgia, serif;
+           font-style: italic;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 40px;
+            color: darkslategrey;
+            font-family: Georgia, serif;
+        }
+        h3{
+            text-align: center;
+            font-size: 40px;
+            color: darkslategrey;
+            font-family: Georgia, serif;
+        }
+    </style>
+  </head>
+  <h1>
+    dev: doesnt even vvork
+  </h1>
+
+  <h2>
+    Professional historic securities recommendations
+  </h2>
+  <body>
+    <div class="center">
+        <form name="myForm" onsubmit="return valid()" action="{{ url_for('logic') }}" method="POST">
+            <input type="text" name="stock" placeholder="Enter a stock ticker"><br><br>
+            <input type="submit" onsubmit="validateTicker()" value="Submit">
+        </form>
+    </div>
+  </body>
+  <h3>
+    Enter a stock ticker to see professional analyst <br>
+    opinions of the stock over the past year
+  </h3>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style type="text/css" scoped>
+      .bottomCenter {
+        text-align: center;
+      }
+      body {
+        background: linear-gradient(-45deg, forestgreen,#CC5500, white);
+        background-size: 400% 400%;
+        animation: gradient 20s ease infinite;
+        height: 100vh;
+      }
+
+      @keyframes gradient {
+        100% {
+          background-position: 100% 100%;
+        }
+        100% {
+          background-position: 100% 100%;
+        }
+
+        100% {
+          background-position: 100% 100%;
+        }
+      }
+
+      form {
+        font-size: large;
+        padding-bottom: 20px;
+      }
+      input {
+        width: 300px;
+        height: 80px;
+        font-size: xx-large;
+        margin: auto;
+        position: relative;
+        text-align: center;
+      }
+    </style>
+    <meta charset="UTF-8">
+    <title>Stock Data</title>
+  </head>
+
+  <body>
+    <div class="front" align="center">
+      <ul class="flashes">
+        <img src="{{url_for('static', filename='recommendations.png')}}" alt="User Image" class="center">
+        <br>
+        <br>
+        <img src="{{url_for('static', filename='stock.png')}}" alt="User Image" class="center">
+      </ul>
+    </div>
+
+    <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js">
+    </script>
+    <script type="text/javascript">
+      trends.embed.renderExploreWidget(
+        "TIMESERIES",
+      {
+        comparisonItem: [{ keyword: stock, geo: "US", time: "today 12-m" }],
+        category: 7,
+        property: "",
+      },
+      {
+        exploreQuery: "cat=7&geo=US&q=tsla&date=today 12-m",
+        guestPath: "https://trends.google.com:443/trends/embed/",
+      }
+      );
+    </script>
+
+    <div class="bottomCenter">
+      <form
+        name="myForm"
+        method="post"
+        action="{{ url_for('logic') }}">
+        <input type="submit" value="Home"/>
+      </form>
+    </div>
+  </body>
+</html>
