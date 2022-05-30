@@ -14,6 +14,7 @@ app = Flask(__name__)
 today = datetime.now().strftime("%Y-%m-%d")
 last_year = datetime.strftime(datetime.now() - timedelta(365), '%Y-%m-%d')
 
+# Enter your API key here
 key = "sandbox_c683gniad3iagio36rkg"
 finn_client = finnhub.Client(api_key=key)
 
